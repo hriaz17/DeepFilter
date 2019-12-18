@@ -1,0 +1,53 @@
+#login-btn{
+    margin: 40px 10px 40px;
+}
+
+.search-input{
+    width:400px;
+}
+
+.feed-heading{
+    color: #FAFAFA;
+    margin: 75px 0 75px;
+    text-align: center;
+}
+
+.photo-card{
+    margin: 0 0 15px 75px;
+    width: 90%;
+    color: black;
+}
+
+.card-img-top{
+    height: 500px;
+}
+
+.card-btn{
+    background: rgba(255, 255, 255, 0);
+    border:none;
+    margin-right: 15px;
+}
+
+.cmt-p{
+    display: inline;
+}
+
+.tag-link{
+    color: indigo;
+}
+
+.comment-div{
+    margin: 30px 0 0 20px;
+    width: 80%;
+}
+
+.uncomment-btn{
+    position:absolute;
+    right: 50px;
+    background:  rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.liked-color{
+    color:red;
+}

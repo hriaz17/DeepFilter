@@ -1,0 +1,45 @@
+
+.login-form {
+  width: 400px;
+  margin: 60px auto 0;
+  padding: 30px 50px 30px;
+  background-color: rgba(32, 72, 158, 0.85);
+  border-radius: 15px;
+}
+
+.login-input-bar{
+    margin: 20px auto 20px;
+    width: 300px;
+}
+
+#login-heading {
+    margin: 60px 0 60px;
+    text-align: center;
+}
+
+.login-form .hint-text {
+  color: #FAFAFA;
+  padding-bottom: 15px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.signin-btn {
+    margin: 40px auto 0;        
+    font-size: 15px;
+    font-weight: bold;
+    height: 40px;
+    width: 200px;
+}
+.clearfix{
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.input_icon{
+    margin-top: 5px;
+}
+
+.input-group-addon .fa{
+  font-size: 18px;
+}

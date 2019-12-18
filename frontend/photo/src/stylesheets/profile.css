@@ -1,0 +1,62 @@
+.profile-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 400px;
+    margin: 75px 100px 0;
+    text-align: center;
+  }
+  
+  .profile-title {
+    color: lavender;
+    font-size: 18px;
+  }
+
+  .infoBox{
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */ 
+    margin: auto;
+    /* text-align: center; */
+  }
+  
+  .profile-btn {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .profile-a-ref {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  .profile-button:hover, a:hover {
+    opacity: 0.7;
+  }
+
+  .photo-collage{
+    margin-top: 50px;
+    margin-left: 30px;
+  }
+
+  .photo-in-collage{
+    margin:2px;
+    display: inline;
+  }
+
+  #to-feed-btn{
+    margin-left: 10px;
+  }
+
+  .hover-btn{
+    display: none;
+  }
+  .gallery-img:hover + .hover-btn, .hover-btn:hover{
+    display: inline-block;
+  }
+

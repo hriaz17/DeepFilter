@@ -1,0 +1,12 @@
+body{
+    background: url('../images/signupbg.jpg') center center no-repeat fixed;
+    height: 100vh;
+    width: 100vw;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: #FAFAFA;
+}

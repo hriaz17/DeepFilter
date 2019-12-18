@@ -1,0 +1,22 @@
+
+.signup-form{
+    max-width: 500px;
+    height: 700px;
+    margin: auto;
+    padding: 50px;
+    background-color: rgba(119, 36, 105, 0.85);
+}
+
+.header-icon{
+    margin: 20px 175px 20px;
+    align-content: center;
+}
+
+.signup-input-bar{
+    width: 200px;
+}
+
+#submit-btn{
+    width: 200px;
+    margin: 50px auto 0;
+}

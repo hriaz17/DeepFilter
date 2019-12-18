@@ -1,0 +1,526 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: Photo sharing App
+# during dev, should point to your local machine
+host: localhost:8090
+# basePath prefixes all resource paths 
+basePath: /
+# 
+schemes:
+  # tip: remove http to make production-grade
+  - http
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /login/:
+    post:
+      description: login to an account
+      operationId: Login
+      parameters:
+        - name: name
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: password
+          in: query
+          description: password4
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /profile/:
+    post:
+      description: create an account. Please type test, test@gmail.com, test.jpg into blanks.
+      operationId: Login
+      parameters:
+        - name: name
+          in: query
+          description: test
+          required: true
+          type: string
+        - name: email
+          in: query
+          description: test@gmail.com
+          required: true
+          type: string
+        - name: imgurl
+          in: query
+          description:  test.jpg
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /account/:
+    post:
+      description: create an account. Please first execute profile api.
+      operationId: Login
+      parameters:
+        - name: name
+          in: query
+          description: test
+          required: true
+          type: string
+        - name: email
+          in: query
+          description: test@gmail.com
+          required: true
+          type: string
+        - name: password
+          in: query
+          description: 1234
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+          
+  /profile/:userid:
+    get:
+      description: get profile of an user
+      operationId: Login
+      parameters:
+        - name: name
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /profile/userimg/:userid:
+    get:
+      description: Get all images of an user
+      # used as the method name of the controller
+      operationId: getUserImages
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+           
+  /image/like/:
+    post:
+      description: Like an image.
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: imgid
+          in: query
+          description: 1
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /image/checklike:
+    post:
+      description: Check whether like an image.
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: imgid
+          in: query
+          description: 1
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /image/unlike/:
+    post:
+      description: Cancel the like for liked images.
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: imgid
+          in: query
+          description: 1
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+    
+  /feeds/follow/:
+    post:
+      description: Follow another user
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: followingid
+          in: query
+          description: kexin
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /profile/checkfollow:
+    post:
+      description: Follow another user
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: followingid
+          in: query
+          description: kexin
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+           
+  /feeds/unfollow/:
+    post:
+      description: Unfollow another user
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: followingid
+          in: query
+          description: kexin
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /profile/images/:
+    post:
+      description: upload a new image
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: imgurl
+          in: query
+          description: public/images/test.png
+          required: true
+          type: string
+
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /profile/images/delete:
+    post:
+      description: Delete uploaded image
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: imgid
+          in: query
+          description: 8
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /profile/images/comment:
+    post:
+      description: Comment on an image
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+        - name: imgid
+          in: query
+          description: 1
+          required: true
+          type: string
+        - name: comment
+          in: query
+          description: testing
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /image/uncomment:
+    post:
+      description: Delete a comment on an image
+      operationId: Login
+      parameters:
+        - name: commentid
+          in: query
+          description: 1
+          required: true
+          type: integer
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /recommend:
+    get:
+      description: Recommend friends
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /successLogin:
+    post:
+      description: If successfully login, call the api
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /failedLogin:
+    post:
+      description: If unsuccessfully login, call the api
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+  /checkLockout:
+    post:
+      description: Check whether the account has more than 4 times attempts, call the api everytime the user login.
+      operationId: Login
+      parameters:
+        - name: userid
+          in: query
+          description: slowpoke
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/Response"
+        # responses may fall through to errors
+        "400":
+          description: Error
+          schema:
+           $ref: "#/definitions/ErrorResponse"
+
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  Response:
+    required:
+      - message
+      - data
+    properties:
+      message:
+        type: string
+      data:
+        type: string
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string

@@ -1,0 +1,50 @@
+{
+  "name": "cis557project-19fa-m1-photosharing",
+  "version": "1.0.0",
+  "description": "# Planning: User stories, Story points (6 points)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cis557/cis557project-19fa-m1-photosharing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cis557/cis557project-19fa-m1-photosharing/issues"
+  },
+  "homepage": "https://github.com/cis557/cis557project-19fa-m1-photosharing#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6-alpha.6",
+    "install": "^0.13.0",
+    "jquery": "^3.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mime": "^2.4.4",
+    "morgan": "^1.9.1",
+    "mysql": "^2.17.1",
+    "node-pre-gyp": "^0.14.0",
+    "nodemon": "^1.19.4",
+    "npm": "^6.13.0",
+    "or": "^0.2.0",
+    "path": "^0.12.7",
+    "pg": "^7.12.1",
+    "ramda": "^0.26.1",
+    "serve-favicon": "^2.5.0",
+    "sqlite3": "^4.1.0",
+    "swagger-ui-express": "^4.1.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest-fetch-mock": "^2.1.2"
+  }
+}
