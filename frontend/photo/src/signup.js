@@ -143,7 +143,7 @@ class Signup extends React.Component{
             <div className="signup-form">
                 <i className="header-icon far fa-user-circle fa-3x"></i>
                 <h2 className="card-title mt-3 text-center" style={{fontWeight: "bold"}}>Create Account</h2>
-                <p className="text-center">Get started with your account at PhotoSharing</p>
+                <p className="text-center">Get started with your account at DeepFilter.ai</p>
                 <form>
                     <div className="form-group input-group">
                     <div className="input-group-prepend">

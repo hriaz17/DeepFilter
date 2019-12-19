@@ -33,11 +33,17 @@ npm start
 ```
 
 ### Demo Screenshots
-<!--![Login page](assets/login.png)
-![Sign Up page](assets/signup.png)-->
+![Login page](assets/login.png)
+
+![Sign Up page](assets/signup.png)
+
 ![Home page](assets/home.png)
+
 ![user profiles](assets/profile.png)
+
 ![upload page](assets/upload.png)
+
 ![Newsfeed1](assets/newsfeed1.png)
+
 ![Newsfeed2](assets/newsfeed2.png)
 

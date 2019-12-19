@@ -30,7 +30,7 @@ client.query(`
   INSERT INTO profile (NAME, EMAIL, IMGURL) VALUES ('tianshuang', 'tianshuang@seas.upenn.edu', 'https://vignette.wikia.nocookie.net/vsbattles/images/3/37/Doraemon_renderImproved.png/revision/latest?cb=20190730170109');
   INSERT INTO profile (NAME, EMAIL, IMGURL) VALUES ('slowpoke', 'slowpoke@poke.com', 'http://res.pokemon.name/common/pokemon/pgl/079.00.png');
   INSERT INTO profile (NAME, EMAIL, IMGURL) VALUES ('harisriaz17', 'harisriaz1700@gmail.com', 'https://media.licdn.com/dms/image/C5103AQGsMnsTbvyL9A/profile-displayphoto-shrink_200_200/0?e=1582156800&v=beta&t=Jv_8bViMntrHBlSbd1IRU11im2kG2fFv8MssHRShdk0');
-  
+  INSERT INTO profile (NAME, EMAIL, IMGURL) VALUES ('tester', 'tester@gmail.com', 'https://www.upwork.com/profile-portraits/c1OffNRbvZpdhijEvYUvH5MULEoeTU2gpZ5NTjrjd7VwntI2KlRTG40T_o8A-IHiGE');
 
   CREATE TABLE IF NOT EXISTS image_id(
     IMGURL TEXT NOT NULL,
@@ -112,6 +112,7 @@ client.query(`
   INSERT INTO account (NAME, EMAIL, PASSWORD) VALUES ('tianshuang', 'tianshuang@seas.upenn.edu', 'password3');
   INSERT INTO account (NAME, EMAIL, PASSWORD) VALUES ('slowpoke', 'slowpoke@poke.com', 'password4');
   INSERT INTO account (NAME, EMAIL, PASSWORD) VALUES ('harisriaz17', 'harisriaz1700@gmail.com', 'yolo123');
+  INSERT INTO account (NAME, EMAIL, PASSWORD) VALUES ('tester', 'tester@gmail.com', 'abc123');
 
   CREATE TABLE IF NOT EXISTS following(
     USERID char(20),
