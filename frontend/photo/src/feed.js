@@ -430,7 +430,7 @@ class Feed extends React.Component{
             </nav>
             
             <div className="feed-heading">
-                <h1><em>Welcome to PhotoSharing !</em></h1>
+                <h1><em>Welcome to DeepFilter.ai!</em></h1>
             </div>
             <div>{loginDisplay}</div>
         </div>
