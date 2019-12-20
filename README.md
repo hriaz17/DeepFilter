@@ -32,7 +32,24 @@ nodemon server.js
 npm start
 ```
 
+##### To run ngrok server do as follows:
+
+* first cd to ngrok folder
+* run this command once:
+
+```
+ngrok authToken YOUR_NGROK_AUTH_TOKEN
+
+```
+then open cmd and run this command: 
+
+```
+ngrok http 3000 -host-header="localhost:3000"
+```
+and finally note the forwarding url
+
 ### Demo Screenshots
+
 ![Login page](assets/login.png)
 
 ![Sign Up page](assets/signup.png)
@@ -41,9 +58,13 @@ npm start
 
 ![user profiles](assets/profile.png)
 
-![upload page](assets/upload.png)
+![upload page](assets/upload1.png)
+
+![upload page](assets/upload2.png)
 
 ![Newsfeed1](assets/newsfeed1.png)
 
 ![Newsfeed2](assets/newsfeed2.png)
+
+![Newsfeed3](assets/newsfeed3.png)
 

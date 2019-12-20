@@ -30,6 +30,7 @@ webapp.use(bodyParser.urlencoded({
 webapp.use(bodyParser.json());
 webapp.use(bodyParser.json(), fileupload());
 
+webapp.use(express.static("public"));
 // Import database
 const client = require('./database.js');
 
@@ -41,6 +42,21 @@ const client = require('./database.js');
 // client.connect((err) => {
 //   if (err) { console.log(err); } else { console.log('Connected!'); }
 // });
+
+
+//Fast style stuff
+const deepai = require('deepai'); // OR include deepai.min.js as a script tag in your HTML
+var request = require('request');
+const fs = require('fs');
+deepai.setApiKey('78a13c71-5827-4524-9f7b-3d24575a06e1');
+var download = function(uri, filename, callback){
+  request.head(uri, function(err, res, body){
+    console.log('content-type:', res.headers['content-type']);
+    console.log('content-length:', res.headers['content-length']);
+
+    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+  });
+};
 
 
 // Server port
@@ -146,6 +162,67 @@ webapp.post('/saveImage', (req, res) => {
     });
     res.end(JSON.stringify({ status: 'success', path: `/img/${fileName}` }));
   });
+});
+
+//route for fast style api
+webapp.post('/fastStyle_mainUpload', (req, res) => {
+  const fileName = "main.jpg";
+  const image = req.files.myFile;
+  const Imagepath = `public/fast/${fileName}`;
+  image.mv(Imagepath, (error) => {
+    if (error) {
+      console.error(error);
+      res.writeHead(500, {
+        'Content-Type': 'application/json',
+      });
+      res.end(JSON.stringify({ status: 'error', message: error }));
+      return;
+    }
+
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+    });
+    res.end(JSON.stringify({ status: 'success', path: `/img/${fileName}` }));
+  });
+});
+
+webapp.post('/fastStyle_styleUpload', (req, res) => {
+  const fileName = "style.jpg";
+  const image = req.files.myFile;
+  const Imagepath = `public/fast/${fileName}`;
+  image.mv(Imagepath, (error) => {
+    if (error) {
+      console.error(error);
+      res.writeHead(500, {
+        'Content-Type': 'application/json',
+      });
+      res.end(JSON.stringify({ status: 'error', message: error }));
+      return;
+    }
+
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+    });
+    res.end(JSON.stringify({ status: 'success', path: `/img/${fileName}` }));
+  });
+});
+
+webapp.post('/fastStyle_createOutput', (req, res) => {
+  console.log("I came here!");
+  (async function() {
+    var resp = await deepai.callStandardApi("fast-style-transfer", {
+            content: fs.createReadStream("public/fast/main.jpg"),
+            style: fs.createReadStream("public/fast/style.jpg"),
+    });
+    console.log(resp);
+    download(resp.output_url, 'public/fast/output.jpg', function(){
+    
+    });
+    res.writeHead(200, {
+      'Content-Type': 'application/json',
+    });
+    res.end(JSON.stringify({ status: 'success', path: `/img/${fileName}` }));
+})()
 });
 
 // get an image with imageID

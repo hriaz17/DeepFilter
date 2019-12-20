@@ -180,7 +180,11 @@ class Profile extends React.Component{
   
     toUpload(){
         window.location.href = '/upload';
-    } 
+    }
+    
+    toFastStyle(){
+        window.location.href = '/fastStyle';
+    }
 
     toFeeds(){
         window.location.href = '/';
@@ -207,7 +211,7 @@ class Profile extends React.Component{
         ) 
       } 
 
-      let conditionalButton;
+      let conditionalButton, conditionalButton2;
       if(this.state.lookup != null){
             if(this.state.isFollowing === '0'){
                 conditionalButton = <button className="profile-btn" onClick={this.foRequest.bind(this)}>Follow</button>
@@ -215,7 +219,8 @@ class Profile extends React.Component{
                 conditionalButton = <button className="profile-btn" onClick={this.unfoReq.bind(this)}>Unfollow</button>
             }        
       }else{
-            conditionalButton = <button className="btn btn-success btn-block" onClick={this.toUpload}>Upload</button>
+            conditionalButton = <button className="btn btn-success btn-block" onClick={this.toUpload}>Upload your own photos</button>
+            conditionalButton2 = <button className="btn btn-success btn-block" onClick={this.toFastStyle}>Try our Fast Style API</button>
       }
       
       return (
@@ -243,6 +248,7 @@ class Profile extends React.Component{
                     <p> Welcome! This is {this.state.lookup ? this.state.lookup : this.state.user}'s profile!</p>                   
                     <div style={{width:"60%",margin:"auto"}}>
                         {conditionalButton}
+                        {conditionalButton2}
                     </div>
                 </div>
                 <div className="photo-collage col-sm-6">{photoList}</div>

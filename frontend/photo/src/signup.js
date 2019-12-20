@@ -106,7 +106,7 @@ class Signup extends React.Component{
             'Content-Type': 'application/json; charset=utf-8',
             },
         });
-        //window.location.href = '/login';
+        window.location.href = '/login';
     }
 
     signupSubmit() {
@@ -132,7 +132,8 @@ class Signup extends React.Component{
           password,
         };
         this.createProfile(objp);
-        this.createAccount(obj);   
+        this.createAccount(obj); 
+          
     }
 
     
