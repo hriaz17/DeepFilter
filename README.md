@@ -60,11 +60,11 @@ and finally note the forwarding url
 
 ![upload page](assets/upload1.png)
 
-![upload page](assets/upload2.png)
+![upload page](assets/upload2.PNG)
 
 ![Newsfeed1](assets/newsfeed1.png)
 
 ![Newsfeed2](assets/newsfeed2.png)
 
-![Newsfeed3](assets/newsfeed3.png)
+![Newsfeed3](assets/newsfeed3.PNG)
 
