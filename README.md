@@ -50,21 +50,10 @@ and finally note the forwarding url
 
 ### Demo Screenshots
 
-![Login page](assets/login.png)
-
-![Sign Up page](assets/signup.png)
-
-![Home page](assets/home.png)
-
-![user profiles](assets/profile.png)
-
-![upload page](assets/upload1.png)
-
-![upload page](assets/upload2.PNG)
-
-![Newsfeed1](assets/newsfeed1.png)
-
-![Newsfeed2](assets/newsfeed2.png)
-
-![Newsfeed3](assets/newsfeed3.PNG)
-
+<div align="center">
+    <img src="assets/login.png" alt="Login page">
+    <img src="assets/signup.png" alt="Sign Up page">
+    <img src="assets/home.png" alt="Home page">
+    <img src="assets/upload1.png" alt="Upload page">
+    <img src="assets/upload2.PNG" alt="Upload page">
+</div>
